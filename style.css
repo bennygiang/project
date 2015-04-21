@@ -1,0 +1,64 @@
+.background {
+  background-color: #FF0000;
+}
+label {
+  width: 150px;
+  display: inline-block;
+  margin: 5px 1px 5px 5px;
+}
+button {
+  margin: 10px 1px 5px 5px;
+}
+input {
+  display: inline-block;
+  margin: 5px 1px 5px 5px;
+}
+.table1 {
+  width: 400px;
+  border-radius: 3px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 0 auto;
+  background-color:grey;
+  font-family: Arial;
+}
+.table2 {
+  width: 400px;
+  border-radius: 3px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 0 auto;
+  background-color: grey;
+  font-family: Arial;
+}
+.login{
+  color: #000000;
+  font-family: Arial;
+}
+.signup{
+  color: #000000;
+  font-family: Arial;
+}
+.title {
+  color: yellow;
+  font-family: Arial;
+  font-size: 100px;
+}
+.mainphoto {
+  margin: auto;
+  text-align: center;
+  display: block;
+}
+.maingif {
+  margin: auto;
+  text-align: center;
+  display: block; 
+}
+.click_button {
+  color: yellow;
+  font-family: Arial;
+  font-size: 50px;
+  margin: auto;
+  text-align: center;
+  display: block; 
+}

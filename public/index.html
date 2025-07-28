@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify to Soulseek Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>SpotiSeek</h1>
+            </div>
+            <p class="tagline">Automatically download your Spotify playlists via Soulseek</p>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h2>Transform Your Spotify Playlists</h2>
+                    <p>Connect your Spotify account and automatically download high-quality FLAC files from Soulseek whenever new songs are added to your playlists.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Automatic Sync</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-file-audio"></i>
+                            <span>FLAC Quality</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Real-time Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="login-card">
+                    <h3>Get Started</h3>
+                    <p>Connect your Spotify account to begin downloading your playlists</p>
+                    <a href="/login" class="spotify-login-btn">
+                        <i class="fab fa-spotify"></i>
+                        Connect with Spotify
+                    </a>
+                    
+                    <div class="requirements">
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Spotify account</li>
+                            <li><i class="fas fa-check"></i> Soulseek account</li>
+                            <li><i class="fas fa-check"></i> slsk-batchdl installed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h3>How It Works</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Connect Spotify</h4>
+                        <p>Authenticate with your Spotify account to access your playlists</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Select Playlists</h4>
+                        <p>Choose which playlists you want to automatically download</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Auto Download</h4>
+                        <p>New songs are automatically downloaded via Soulseek in high quality</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 SpotiSeek. Built with ❤️ for music lovers.</p>
+            <div class="footer-links">
+                <a href="https://github.com/fiso64/slsk-batchdl" target="_blank">slsk-batchdl</a>
+                <a href="https://github.com/bdavs3/spotifyseek" target="_blank">spotifyseek</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Check for error parameters in URL
+        const urlParams = new URLSearchParams(window.location.hash.substring(1));
+        const error = urlParams.get('error');
+        
+        if (error) {
+            let errorMessage = 'An error occurred during authentication.';
+            if (error === 'state_mismatch') {
+                errorMessage = 'Authentication state mismatch. Please try again.';
+            } else if (error === 'invalid_token') {
+                errorMessage = 'Invalid token received. Please try again.';
+            }
+            
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <i class="fas fa-exclamation-triangle"></i>
+                ${errorMessage}
+            `;
+            document.querySelector('.main-content').prepend(errorDiv);
+        }
+    </script>
+</body>
+</html>
